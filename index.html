@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href=".static/css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+<title>展示页面</title>
+<!-- <scrip type="text/javascript" src="../static/"></scrip>
+<scrip type="text/javascript" src="../static/"></scrip> -->
+<script type="text/javascript" src="static/jquery.min.js"></script>
+<script type="text/javascript" src="static/particles.min.js'"></script>
+<script type="text/javascript" src="static/app.js'"></script>
+<script type="text/javascript" src="jstatic/query.animsition.js'"></script>
+<link rel="stylesheet" type="text/css" href="static/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="static/css/scanboardLogin.css" />
+<link rel="stylesheet" type="text/css" href="static/css/animsition.css" />
+<script>
+  function StartBlockPage() {
+    document.getElementById("llll").style.display="block"
+}
+
+function CloseBlockPage() {
+  document.getElementById("llll").style.display="none"
+}
+  function post(){
+    console.log("aaa")
+    StartBlockPage()
+    var host = "http://81.71.71.136:8080"
+    $.ajax({
+            url: host+"/wsim",
+            data: {
+              teacher_ans:document.getElementById("teacher_ans").value,
+              stu_ans: document.getElementById("stu_ans").value,
+              maxScore:document.getElementById("maxScore").value,
+              keywords:document.getElementById("keywords").value
+            },
+            type: "POST",
+            dataType: "json",
+            success: function(data) {
+              CloseBlockPage()
+              console.log(data)
+              document.getElementById("score").value = data.res
+              // innerHTML()
+                // data = eval("(" + data+ ")");
+                // data = jQuery.parseJSON(data);  // dataType注释了，故注意反序列化
+                // $("#ret").text(data.result);
+            }
+         });
+    }
+  
+
+
+ 
+
+</script>
+</head>
+<body>
+  <div id="particles-js" style="z-index: -1;"></div>
+	<!-- <div class="wp animsition"> -->
+		<!-- <div class="boardLogin" id ="fa"> -->
+    <div class="boardLogin">
+			<!-- <div class="logo ">
+				CASIC - 数据交换平台
+			</div> -->
+			<form>
+        <div class="inpGroup">
+					<span class="loginIco1"></span>
+					<input type="text" name=""  id="stu_ans" placeholder="请输入学生答案" autocomplete="off" style="font-size: large;">
+				</div>
+				<div class="prompt">
+					<p class="error">用户名错误或不存在</p>
+				</div>
+
+				<div class="inpGroup">
+					<span class="loginIco1"></span>
+					<input type="text" name=""  id="teacher_ans" placeholder="请输入参考答案" autocomplete="off" style="font-size: large;">
+				</div>
+				<div class="prompt">
+					<p class="error">用户名错误或不存在</p>
+				</div>
+
+				<div class="inpGroup">
+					<span class="loginIco2"></span>
+					<input type="text" name="" id="maxScore" placeholder="请输入题目分值" autocomplete="off" style="font-size: large;">
+				</div>
+        <div class="prompt">
+					<p class="success">输入正确</p>
+				</div>
+        <div class="inpGroup">
+					<span class="loginIco3"></span>
+					<input type="text" id ="keywords" name="" placeholder="参考答案关键词" style="font-size: large;">
+				</div>
+        <div class="prompt">
+					<p class="success">输入正确</p>
+				</div>
+        <div class="inpGroup">
+					<span class="loginIco3"></span>
+					<input type="text" id ="score" name="" placeholder="得分" style="font-size: large;">
+				</div>
+				<div class="prompt">
+					<p class="success">输入正确</p>
+				</div>
+
+				<button type="button" class="animsition-link submit" onclick="post()">提交</button>
+				<!-- <button class="animsition-link submit">登录</button> -->
+        
+			</form>
+		</div>
+	<!-- </div> -->
+  <div class="loader" id="llll">
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+  </div>
+  
+
+</body>
+
+<script type="text/javascript">
+CloseBlockPage()
+	// $(".animsition").animsition("particles-js",{
+	//     inClass               :   'fade-in',
+	//     outClass              :   'fade-out',
+	//     inDuration            :    800,
+	//     outDuration           :    1000,
+	//     linkElement           :   '.animsition-link',
+
+	//     loading               :    false,
+	//     loadingParentElement  :   'body',
+	//     loadingClass          :   'animsition-loading',
+	//     unSupportCss          : [ 'animation-duration',
+	//                               '-webkit-animation-duration',
+	//                               '-o-animation-duration'
+	//                             ],
+
+
+	//     overlay               :   false,
+
+	//     overlayClass          :   'animsition-overlay-slide',
+	//     overlayParentElement  :   'body'
+  // 	});
+  
+</script>
+</html>
