@@ -76,11 +76,19 @@ select:-webkit-autofill {
 	/* background: url(../images/s_ico6.png); */
   background: url(../images/Note-01-256.png);
 }
+.boardLogin .inpGroup span.loginIco4{
+	/* background: url(../images/s_ico6.png); */
+  background: url(../images/document-edit.png);
+}
 .boardLogin .inpGroup span.loginIco2{
 	background: url(../images/check-mark.png);
 }
 .boardLogin .inpGroup span.loginIco3{
 	background: url(../images/Calculator-256.png);
+}
+.boardLogin .inpGroup span.loginIco5{
+	/* background: url(../images/s_ico6.png); */
+  background: url(../images/message-edit.png);
 }
 .boardLogin .inpGroup input{
 	display: block;
@@ -197,8 +205,17 @@ select:-webkit-autofill {
     background: url(../images/Note-01-256.png);
 		background-size: 100% 100%;
 	}
+  .boardLogin .inpGroup span.loginIco4{
+		/* background: url(../images/s_ico6.png); */
+    background: url(../images/document-edit.png);
+		background-size: 100% 100%;
+	}
 	.boardLogin .inpGroup span.loginIco2{
 		background: url(../images/check-mark.png);
+		background-size: 100% 100%;
+	}
+  .boardLogin .inpGroup span.loginIco5{
+		background: url(../images/message-edit.png);
 		background-size: 100% 100%;
 	}
   .boardLogin .inpGroup span.loginIco3{
@@ -239,8 +256,17 @@ select:-webkit-autofill {
     background: url(../images/Note-01-256.png);
 		background-size: 100% 100%;
 	}
+  .boardLogin .inpGroup span.loginIco4{
+		/* background: url(../images/s_ico6.png); */
+    background: url(../images/document-edit.png);
+		background-size: 100% 100%;
+	}
 	.boardLogin .inpGroup span.loginIco2{
 		background: url(../images/check-mark.png);
+		background-size: 100% 100%;
+	}
+  .boardLogin .inpGroup span.loginIco5{
+		background: url(../images/message-edit.png);
 		background-size: 100% 100%;
 	}
   .boardLogin .inpGroup span.loginIco3{
