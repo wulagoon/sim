@@ -1,2 +1,1 @@
 # wxj.github.io
-CNAME
